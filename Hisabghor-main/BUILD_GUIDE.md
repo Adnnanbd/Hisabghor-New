@@ -1,6 +1,56 @@
 # হিসাবঘর Pro - Build Guide
 
-## Project Structure Created ✅
+## 📱 GitHub Actions Automated APK Build
+
+This repository includes GitHub Actions workflow to automatically build your Flutter APK.
+
+### How It Works
+
+1. **Automatic Builds**: The APK is built automatically when you:
+   - Push to `main` or `master` branch
+   - Create a pull request to `main` or `master`
+   - Manually trigger the workflow from the Actions tab
+
+2. **Build Output**: 
+   - APK artifacts are available for 30 days in the workflow run
+   - If you create a git tag (e.g., `v1.0.0`), a GitHub Release is automatically created with the APK
+
+### Downloading the APK
+
+#### From Workflow Runs:
+1. Go to the **Actions** tab in your GitHub repository
+2. Click on the latest workflow run
+3. Scroll down to the **Artifacts** section
+4. Click on `app-release` to download the APK
+
+#### From Releases (if using tags):
+1. Go to the **Releases** section in your repository
+2. Find the release corresponding to your tag
+3. Download the APK from the assets
+
+### Manual Trigger
+
+You can manually trigger a build:
+1. Go to **Actions** tab
+2. Select **Build Flutter APK** workflow
+3. Click **Run workflow**
+4. Choose the branch and click **Run workflow**
+
+### Creating a Release
+
+To create a release with the APK:
+
+```bash
+# Create and push a tag
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+This will automatically create a GitHub Release with the APK attached.
+
+---
+
+## Project Structure
 
 The following core structure has been created for your advanced bilingual store management app:
 
