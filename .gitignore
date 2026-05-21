@@ -1,47 +1,43 @@
 ```
 # Dependencies
 node_modules/
-.julia/
-.zig-cache/
-zig-cache/
+.pub/
+.dart_tool/
+.build/
 
-# Build outputs
-build/
-dist/
-target/
+# Compiled and build artifacts
+*.pyc
 *.o
 *.obj
-*.out
 *.exe
 *.dll
 *.so
 *.a
+*.out
+dist/
+build/
+target/
+lib/
+bin/
 
-# Python specific
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Environment
 .env
 .env.local
 .env.*
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor/IDE
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+
+# OS generated files
 .DS_Store
 Thumbs.db
 
@@ -50,10 +46,39 @@ coverage/
 htmlcov/
 .coverage
 
-# Gradle
-.gradle/
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# MyPy
-.mypy_cache/
+# Flutter specific
+**/ios/**
+**/android/**
+**/windows/**
+**/linux/**
+**/macos/**
+flutter/**
+packages/flutter_sms/build/
+packages/flutter_sms/.dart_tool/
+packages/flutter_sms/.pub/
 ```
