@@ -1,0 +1,71 @@
+name: hisabghor_pro
+description: "হিসাবঘর Pro - বাংলা স্টোর ম্যানেজমেন্ট অ্যাপ"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Local SMS plugin
+  flutter_sms:
+    path: packages/flutter_sms
+
+  # UI
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+
+  # State management
+  provider: ^6.1.2
+
+  # Local storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.3.2
+
+  # File handling
+  excel: ^4.0.6
+  csv: ^6.0.0
+  path_provider: ^2.1.4
+  path: ^1.9.0
+  share_plus: ^10.1.2
+  file_picker: ^8.1.2
+
+  # Networking & SMS APIs
+  http: ^1.2.2
+
+  # Communication
+  url_launcher: ^6.3.0
+  permission_handler: ^11.3.1
+
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.4.2
+  connectivity_plus: ^6.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+    - assets/translations/
+
+  fonts:
+    - family: Hind Siliguri
+      fonts:
+        - asset: assets/fonts/HindSiliguri-Regular.ttf
+        - asset: assets/fonts/HindSiliguri-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/HindSiliguri-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/HindSiliguri-Bold.ttf
+          weight: 700
