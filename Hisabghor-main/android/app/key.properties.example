@@ -1,0 +1,14 @@
+# This file defines the signing key for your Android app.
+# Create this file in android/app/ directory with your actual keystore details.
+# DO NOT commit this file to version control if it contains sensitive information.
+
+storePassword=<your-store-password>
+keyPassword=<your-key-password>
+keyAlias=<your-key-alias>
+storeFile=<path-to-your-keystore-file>
+
+# For debug builds, you can use the default debug keystore:
+# storeFile=../build/intermediates/debug_keystore/debug.keystore
+# storePassword=android
+# keyPassword=android
+# keyAlias=androiddebugkey

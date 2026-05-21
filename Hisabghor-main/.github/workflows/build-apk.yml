@@ -1,0 +1,71 @@
+name: Build Flutter APK
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+      
+      - name: Get dependencies
+        run: |
+          cd Hisabghor-main
+          flutter pub get
+      
+      - name: Create missing directories
+        run: |
+          mkdir -p Hisabghor-main/assets/images
+          mkdir -p Hisabghor-main/assets/translations
+          mkdir -p Hisabghor-main/packages/flutter_sms
+      
+      - name: Copy packages if needed
+        run: |
+          if [ -d "packages/flutter_sms" ] && [ ! -d "Hisabghor-main/packages/flutter_sms" ]; then
+            cp -r packages/flutter_sms Hisabghor-main/packages/
+          fi
+      
+      - name: Analyze code
+        run: |
+          cd Hisabghor-main
+          flutter analyze --no-fatal-infos
+      
+      - name: Build APK
+        run: |
+          cd Hisabghor-main
+          flutter build apk --release
+      
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: Hisabghor-main/build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+      
+      - name: Create Release (if tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Hisabghor-main/build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
