@@ -1,0 +1,19 @@
+name: flutter_sms
+description: A Flutter plugin to send SMS on Android (fixed version)
+version: 1.0.0
+homepage: https://github.com/fluttercommunity/flutter_sms
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_sms
+        pluginClass: FlutterSmsPlugin
