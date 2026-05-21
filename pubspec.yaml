@@ -1,7 +1,7 @@
 name: hisabghor_pro
-description: "Simple Store Manager"
+description: "হিসাবঘর Pro - বাংলা স্টোর ম্যানেজমেন্ট অ্যাপ"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
@@ -9,13 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.8
   provider: ^6.1.2
   shared_preferences: ^2.3.2
   intl: ^0.19.0
   uuid: ^4.4.2
-  google_fonts: ^6.2.1
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
+  # Removed Firebase and complex plugins to prevent startup crashes
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +23,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/
-    - assets/fonts/
+  # Commented out assets/fonts to prevent crash if files are missing
+  # Uncomment only if you are 100% sure the files exist in your repo
+  # assets:
+  #   - assets/images/
+  #   - assets/fonts/
+  #   - assets/translations/
+  # fonts:
+  #   - family: Hind Siliguri
+  #     fonts:
+  #       - asset: assets/fonts/HindSiliguri-Regular.ttf
