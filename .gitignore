@@ -1,0 +1,36 @@
+```
+# Dependencies
+node_modules/
+.dart_tool/
+.pub/
+
+# Build outputs
+build/
+dist/
+*.apk
+*.aab
+*.ipa
+*.app
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+```
